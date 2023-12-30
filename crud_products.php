@@ -17,17 +17,19 @@ $products_readable = [];
 $products_readable = get_product($woocommerce);
 
 
+
 function get_product($woocommerce)
 {
     $endpoint = 'products';
     $parameters = [
         'type' => 'simple',
-        'per_page' => 1
+        'per_page' => 5
     ];
     //get
     $products = $woocommerce->get($endpoint, $parameters);
 
     $products_readable = [];
+    
     foreach ($products as $key => $product) {
         $producto = new product();
 
